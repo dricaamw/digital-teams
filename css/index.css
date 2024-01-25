@@ -18,20 +18,24 @@
     --light-gray: #464646;
     --pink: #c61067;
 }
+
 body{
     padding: 0 100px;
     background-color: var(--dark-gray);
 }
+
 header{
     display: flex;
     padding-top: 20px;
     align-items: center;
 }
+
 header .busca{
     width: 500px;
     position: relative;
     margin-left: 26px;
 }
+
 header .busca input{
     width: 100%;
     height: 46px;
@@ -40,6 +44,7 @@ header .busca input{
     border-radius: 5px;
     border: 2px solid var(--light-gray);
 }
+
 header .busca box-icon{
     position: absolute;
     right: 16px;
@@ -47,12 +52,15 @@ header .busca box-icon{
     fill: var(--light-gray);
     cursor: pointer;
 }
+
 header .busca box-icon:hover{
     fill: var(--pink);
 }
+
 header .busca input:focus{
     border-color: var(--pink);
 }
+
 .container{
 margin-top: 65px;
 }
@@ -184,6 +192,14 @@ margin-top: 65px;
     position: fixed;
     top: 0;
     left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 200ms;
+}
+
+#overlay.show{
+    opacity: 1;
+    visibility: visible;
 }
 
 form{
