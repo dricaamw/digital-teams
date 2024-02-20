@@ -1,3 +1,4 @@
+let teams = [];
 criarBtn.onclick = () => {
     // alert("clicou");
     // console.log("clicou aqui");
@@ -14,21 +15,30 @@ overlay.onclick = () => {
 }
 formCriar.onsubmit = () => {
     event.preventDefault();
-    
-    // alert(nome.value+' '+capacidade.value);
-//     lisTeams.innerHTML = '';
-//     lisTeams.innerHTML = `
-//     <li>
-//         <h4>${nome.value}<box-icon name="show"></box-icon></h4>
-//         <h1>0 <span>/ ${capacidade.value}</span></h1>
-//         <div class="actions">
-//         <button>adicionar</button>
-//         <button><box-icon type='solid' name='trash-alt'></box-icon></button>
-//         </div>
-//     </li>
-// `;
+    teams.push({
+        name: nome.value,
+        capacity: capacidade.value,
+        members: []
+    });
 
+    adicionarCards();
+    
     formCriar.classList.remove('show');
     overlay.classList.remove('show');
+}
+function adicionarCards(){
+    lisTeams.innerHTML = '';
+    for(let i = 0; i < teams.length; i++){
+    lisTeams.innerHTML += `
+    <li>
+        <h4>${teams[i].name}<box-icon name="show"></box-icon></h4>
+        <h1>0 <span>/ ${teams[i].capacity}</span></h1>
+        <div class="actions">
+        <button>adicionar</button>
+        <button><box-icon name='trash-alt'></box-icon></button>
+        </div>
+    </li>
+`;
+    }     
 }
 
