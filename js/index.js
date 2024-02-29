@@ -102,3 +102,20 @@ function mostrarFormParticipante(indice){
 function mostrarParticipantes(indice){
     alert("Lista de participantes:\n" + teams[indice].members)
 }
+function searchTeam(){
+    let lista = document.querySelectorAll('#teams ul li');
+    if (pesquisa.value.length >= 3){
+       for (let i = 0; i < lista.length; i++){
+           if(lista[i].children[0].innerText.toString().toLowerCase().includes(pesquisa.value)){
+               lista[i].classList.remove('none');
+            }  else{
+               lista[i].classList.add('none');
+           }     
+   };
+    } else{
+        for(let i = 0; i < lista.length; i++){
+            lista[i].classList.remove('none');
+        }
+    }
+
+}
